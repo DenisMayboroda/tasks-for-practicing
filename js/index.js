@@ -52,17 +52,31 @@
 *? інакше виводить рядок "Невірний пароль!"
  */
 
-const userLogin = prompt("Enter login!");
-if (userLogin === "Admin") {
-  const userPassword = prompt("Enter password!");
-  if (userPassword === "Password") {
-    alert("Вітаю");
-  } else {
-    alert("Невірний пароль!");
+// const userLogin = prompt("Enter login!");
+// if (userLogin === "Admin") {
+//   const userPassword = prompt("Enter password!");
+//   if (userPassword === "Password") {
+//     alert("Вітаю");
+//   } else {
+//     alert("Невірний пароль!");
+//   }
+//   // } else if (userLogin === "" || userLogin === null) {
+// } else if (!userLogin) {
+//   alert("Canceled");
+// } else {
+//   alert("Я вас не знаю");
+// }
+
+
+/**
+ *? Напишіть цикл, який виводить у консоль
+ *? всі непарні числа  від max до min  за спаданням
+ */
+const max = 50;
+const min = 23;
+
+for (let i = max; i >= min; i -= 1) {
+  if (i % 2 !== 0) {
+    console.log(i);
   }
-  // } else if (userLogin === "" || userLogin === null) {
-} else if (!userLogin) {
-  alert("Canceled");
-} else {
-  alert("Я вас не знаю");
 }
