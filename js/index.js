@@ -94,15 +94,31 @@
  *! Робити перевірку, що користувач ввів саме число,
  *! а не довільний набір символів не потрібно.*/
 
-let userNumber = prompt("Enter number");
-let total = 0;
-while (userNumber !== null) {
-  total += Number(userNumber);
+// let userNumber = prompt("Enter number");
+// let total = 0;
+// while (userNumber !== null) {
+//   total += Number(userNumber);
   
-  userNumber = prompt("Enter number");
+//   userNumber = prompt("Enter number");
 
 
+// }
+
+// alert(`Загальна сума введених чисел дорівнює ${total}.`);
+
+/**
+ *? У змінній min лежить число від 0 до 59.
+ *? Визначте, в яку чверть години потрапляє
+ *? це число (у першу, другу, третю чи четверту).
+ */
+
+ let min = 59;
+if (min >=0 && min <=15) {
+  console.log("Перша чверть");
+} else if (min >=16 && min <=30) {
+  console.log("Друга чверть");
+} else if (min >=31 && min <=45) {
+  console.log("Третя чверть");
+} else {
+  console.log("Четверта чверть");
 }
-
-alert(`Загальна сума введених чисел дорівнює ${total}.`);
-
