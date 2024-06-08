@@ -67,7 +67,6 @@
 //   alert("Я вас не знаю");
 // }
 
-
 /**
  *? Напишіть цикл, який виводить у консоль
  *? всі непарні числа  від max до min  за спаданням
@@ -80,7 +79,6 @@
 //     console.log(i);
 //   }
 // }
-
 
 /**
  *? При завантаженні сторінки користувачеві пропонується
@@ -98,9 +96,8 @@
 // let total = 0;
 // while (userNumber !== null) {
 //   total += Number(userNumber);
-  
-//   userNumber = prompt("Enter number");
 
+//   userNumber = prompt("Enter number");
 
 // }
 
@@ -187,9 +184,9 @@
 
 // function calcTotalPrice(someStones, stoneName) {
 //   for (const stone of someStones) {
-  
+
 //     if (stone.name === stoneName) {
-      
+
 //       return stone.price * stone.quantity;
 //     }
 //   }
@@ -204,16 +201,48 @@
 // і повертає рядок js is the best
 // вхідний массив не має змінюватись (мутується)
 
-const arr = ["best", "the", "foo", "is", "js"];
-function delateElement(array, element) {
-  const copyArray = array.slice()
-  const index = copyArray.indexOf(element)
-  if (index !== -1) {
-    copyArray.splice(index, 1)
+// const arr = ["best", "the", "foo", "is", "js"];
+// function delateElement(array, element) {
+//   const copyArray = array.slice()
+//   const index = copyArray.indexOf(element)
+//   if (index !== -1) {
+//     copyArray.splice(index, 1)
+//   }
+//   copyArray.reverse()
+//   return copyArray.join(" ")
+// }
+
+// console.log(delateElement(arr, "f"))
+// console.log(arr)
+
+///**
+// *? Напишіть функцію, яка приймає массив об'єктів і повертає новий массив
+// *? Зробіть знижку 20 % на всі фрукти у масиві
+// *? Надайте ід для кожного продукту
+// */
+const fruits = [
+  { name: "apple", price: 200 },
+  { name: "orange", price: 300 },
+  { name: "grapes", price: 750 },
+];
+
+function calcDiscountFruits(arr) {
+  const newArray = [];
+
+  let id = 1;
+
+  for (const fruit of arr) {
+    newArray.push({
+      ...fruit,
+      price: fruit.price * 0.8,
+      id,
+    });
+    id++;
   }
-  copyArray.reverse()
-  return copyArray.join(" ")
+
+  return newArray;
 }
 
-console.log(delateElement(arr, "f"))
-console.log(arr)
+console.log(calcDiscountFruits(fruits));
+
+console.log(fruits);
