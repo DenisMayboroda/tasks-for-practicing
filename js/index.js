@@ -112,13 +112,42 @@
  *? це число (у першу, другу, третю чи четверту).
  */
 
- let min = 59;
-if (min >=0 && min <=15) {
-  console.log("Перша чверть");
-} else if (min >=16 && min <=30) {
-  console.log("Друга чверть");
-} else if (min >=31 && min <=45) {
-  console.log("Третя чверть");
-} else {
-  console.log("Четверта чверть");
+//  let min = 59;
+// if (min >=0 && min <=15) {
+//   console.log("Перша чверть");
+// } else if (min >=16 && min <=30) {
+//   console.log("Друга чверть");
+// } else if (min >=31 && min <=45) {
+//   console.log("Третя чверть");
+// } else {
+//   console.log("Четверта чверть");
+// }
+
+/**
+ *? Напиши скрипт для об'єкта user,
+ *? послідовно:
+ *? 1 додати поле mood зі значенням 'happy'
+ *? 2 замінить hobby на 'skydiving'
+ *? 3 замінить значення premium на false
+ *? 4 виводить вміст об'єкта users у форматі
+ *? ключ: значення використовуючи Object.keys() і for...of
+ */
+const user = {
+  name: "John",
+  age: 20,
+  hobby: "tennis",
+  premium: true,
+};
+
+user.mood = "happy";
+user.hobby = "skydiving";
+user.premium = false;
+console.log(user);
+const keys = Object.keys(user)
+console.log(keys);
+
+for (const key of keys)
+{
+  console.log(`${key}:${user[key]}`);
 }
+
