@@ -178,23 +178,42 @@
  *? Функція рахує та повертає загальну вартість каменів
  *? з таким ім'ям, ціною та кількістю з об'єкта
  */
-const stones = [
-  { name: "Изумруд", price: 1300, quantity: 4 },
-  { name: "Бриллиант", price: 2700, quantity: 6 },
-  { name: "Сапфир", price: 400, quantity: 7 },
-  { name: "Щебень", price: 150, quantity: 100 },
-];
+// const stones = [
+//   { name: "Изумруд", price: 1300, quantity: 4 },
+//   { name: "Бриллиант", price: 2700, quantity: 6 },
+//   { name: "Сапфир", price: 400, quantity: 7 },
+//   { name: "Щебень", price: 150, quantity: 100 },
+// ];
 
-function calcTotalPrice(someStones, stoneName) {
-  for (const stone of someStones) {
+// function calcTotalPrice(someStones, stoneName) {
+//   for (const stone of someStones) {
   
-    if (stone.name === stoneName) {
+//     if (stone.name === stoneName) {
       
-      return stone.price * stone.quantity;
-    }
+//       return stone.price * stone.quantity;
+//     }
+//   }
+//   return 0;
+// }
+
+// const totalPrice = calcTotalPrice(stones, "rffgfh");
+// console.log(totalPrice);
+
+// напиши код який із массиву arr видаляє елемент foo.
+// розвертає цей массив
+// і повертає рядок js is the best
+// вхідний массив не має змінюватись (мутується)
+
+const arr = ["best", "the", "foo", "is", "js"];
+function delateElement(array, element) {
+  const copyArray = array.slice()
+  const index = copyArray.indexOf(element)
+  if (index !== -1) {
+    copyArray.splice(index, 1)
   }
-  return 0;
+  copyArray.reverse()
+  return copyArray.join(" ")
 }
 
-const totalPrice = calcTotalPrice(stones, "rffgfh");
-console.log(totalPrice);
+console.log(delateElement(arr, "f"))
+console.log(arr)
