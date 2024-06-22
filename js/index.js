@@ -247,25 +247,46 @@
 
 // console.log(fruits);
 
-//TODO:==============================================
-/**
- *? Поверніть об'єкт, в якому вказано кількість тегів.
- *? Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
- */
-const tweets = [
-  { id: "000", likes: 5, tags: ["js", "nodejs"] },
-  { id: "001", likes: 2, tags: ["html", "css"] },
-  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-  { id: "003", likes: 8, tags: ["css", "react"] },
-  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// //TODO:==============================================
+// /**
+//  *? Поверніть об'єкт, в якому вказано кількість тегів.
+//  *? Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
+//  */
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+// function calcTags(array) {
+//   const tags = array.flatMap((element) => element.tags);
+//   console.log(tags);
+//   return tags.reduce(
+//     (acc, item) => ({ ...acc, [item]: acc[item] ? acc[item] + 1 : 1 }),
+//     {}
+//   );
+// }
+
+// console.log(calcTags(tweets));
+
+///**
+// *? Напишіть функцію, яка приймає массив об'єктів і повертає новий массив
+// *? Зробіть знижку 20 % на всі фрукти у масиві
+// *? Надайте ід для кожного продукту
+// */
+const fruits = [
+  { name: "apple", price: 200 },
+  { name: "orange", price: 300 },
+  { name: "grapes", price: 750 },
 ];
-function calcTags(array) {
-  const tags = array.flatMap((element) => element.tags);
-  console.log(tags);
-  return tags.reduce(
-    (acc, item) => ({ ...acc, [item]: acc[item] ? acc[item] + 1 : 1 }),
-    {}
-  );
+
+function discountFruits(array) {
+  return array.map((item, index) => ({
+    ...item,
+    price: item.price * 0.8,
+    id: index + 1,
+  }));
 }
 
-console.log(calcTags(tweets));
+console.log(discountFruits(fruits));
