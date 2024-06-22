@@ -275,18 +275,52 @@
 // *? Зробіть знижку 20 % на всі фрукти у масиві
 // *? Надайте ід для кожного продукту
 // */
-const fruits = [
-  { name: "apple", price: 200 },
-  { name: "orange", price: 300 },
-  { name: "grapes", price: 750 },
-];
+// const fruits = [
+//   { name: "apple", price: 200 },
+//   { name: "orange", price: 300 },
+//   { name: "grapes", price: 750 },
+// ];
 
-function discountFruits(array) {
-  return array.map((item, index) => ({
-    ...item,
-    price: item.price * 0.8,
-    id: index + 1,
-  }));
+// function discountFruits(array) {
+//   return array.map((item, index) => ({
+//     ...item,
+//     price: item.price * 0.8,
+//     id: index + 1,
+//   }));
+// }
+
+// console.log(discountFruits(fruits));
+
+//TODO:=============================================
+/**
+ *? Напиши класс Storage який створює об'єкти
+ *? Для управління складом товарів.
+ *? При виклику отримуватиме один агрумент - початковий масив товарів,
+ *? і записувати їх у властивість items.
+ *? Додай методи класу:
+ *? getItems() - повертайте масив товарів
+ *? addItems(item) - отримує новий товар та додає його до поточних
+ *? removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
+ */
+
+class Storage {
+  constructor(array) {
+    this.items = array;
+  }
+  getItems() {
+    return this.items;
+  }
+  addItems(item) {
+    this.items.push(item);
+  }
+  removeItem(item) {
+    const idx = this.items.indexOf(item);
+    if (idx !== -1) {
+      this.items.splice(idx, 1);
+    }
+  }
 }
-
-console.log(discountFruits(fruits));
+const storage = new Storage(["apple", "banana", "mango"]);
+console.log(storage.getItems());
+console.log(storage.addItems("dhhdd"));
+console.log(storage.removeItem("banana"));
