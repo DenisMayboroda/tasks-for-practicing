@@ -220,29 +220,52 @@
 // *? Зробіть знижку 20 % на всі фрукти у масиві
 // *? Надайте ід для кожного продукту
 // */
-const fruits = [
-  { name: "apple", price: 200 },
-  { name: "orange", price: 300 },
-  { name: "grapes", price: 750 },
+// const fruits = [
+//   { name: "apple", price: 200 },
+//   { name: "orange", price: 300 },
+//   { name: "grapes", price: 750 },
+// ];
+
+// function calcDiscountFruits(arr) {
+//   const newArray = [];
+
+//   let id = 1;
+
+//   for (const fruit of arr) {
+//     newArray.push({
+//       ...fruit,
+//       price: fruit.price * 0.8,
+//       id,
+//     });
+//     id++;
+//   }
+
+//   return newArray;
+// }
+
+// console.log(calcDiscountFruits(fruits));
+
+// console.log(fruits);
+
+//TODO:==============================================
+/**
+ *? Поверніть об'єкт, в якому вказано кількість тегів.
+ *? Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
+ */
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
 ];
-
-function calcDiscountFruits(arr) {
-  const newArray = [];
-
-  let id = 1;
-
-  for (const fruit of arr) {
-    newArray.push({
-      ...fruit,
-      price: fruit.price * 0.8,
-      id,
-    });
-    id++;
-  }
-
-  return newArray;
+function calcTags(array) {
+  const tags = array.flatMap((element) => element.tags);
+  console.log(tags);
+  return tags.reduce(
+    (acc, item) => ({ ...acc, [item]: acc[item] ? acc[item] + 1 : 1 }),
+    {}
+  );
 }
 
-console.log(calcDiscountFruits(fruits));
-
-console.log(fruits);
+console.log(calcTags(tweets));
