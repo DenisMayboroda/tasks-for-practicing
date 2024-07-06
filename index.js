@@ -4,12 +4,12 @@
 Натискання на кнопку "SHOW ME" має виводити значення з поля введення (дивіться на елементи в html-розмітці)
 */
 
-const buttonEl = document.querySelector("#alertButton");
-const inputEl = document.querySelector("#alertInput");
-buttonEl.addEventListener("click", buttonClick);
-function buttonClick() {
-  console.log(inputEl.value);
-}
+// const buttonEl = document.querySelector("#alertButton");
+// const inputEl = document.querySelector("#alertInput");
+// buttonEl.addEventListener("click", buttonClick);
+// function buttonClick() {
+//   console.log(inputEl.value);
+// }
 
 //TODO:==============================================
 /*
@@ -18,15 +18,15 @@ function buttonClick() {
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
 */
 
-const inputOneEl = document.querySelector(`#leftSwapInput`);
-const inputTwoEl = document.querySelector(`#rightSwapInput`);
-const btnEl = document.querySelector(`#swapButton`);
+// const inputOneEl = document.querySelector(`#leftSwapInput`);
+// const inputTwoEl = document.querySelector(`#rightSwapInput`);
+// const btnEl = document.querySelector(`#swapButton`);
 
-btnEl.addEventListener(`click`, function () {
-  const inputOneElValue = inputOneEl.value;
-  inputOneEl.value = inputTwoEl.value;
-  inputTwoEl.value = inputOneElValue;
-});
+// btnEl.addEventListener(`click`, function () {
+//   const inputOneElValue = inputOneEl.value;
+//   inputOneEl.value = inputTwoEl.value;
+//   inputTwoEl.value = inputOneElValue;
+// });
 
 //TODO:==============================================
 /*
@@ -35,6 +35,21 @@ btnEl.addEventListener(`click`, function () {
 "Розкрити", при повторному натисканні текст знову стає доступним
 і кнопка набуває початкового вигляду.
 */
+
+const buttonEl = document.querySelector("#passwordButton");
+const inputEl = document.querySelector("#passwordInput");
+
+buttonEl.addEventListener("click", madeClickButton);
+
+function madeClickButton() {
+  if (buttonEl.textContent === "Розкрити") {
+    inputEl.setAttribute("type", "text");
+    buttonEl.textContent = "Приховати";
+    return;
+  }
+  inputEl.setAttribute("type", "password");
+  buttonEl.textContent = "Розкрити";
+}
 
 //TODO:==============================================
 /*
