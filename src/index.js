@@ -9,4 +9,17 @@
 import { handlerTaskFormSubmit } from './js/handlerTaskFormSubmit';
 import { refs } from './js/refs';
 
+import { renderCards } from './js/renderCards';
+
+renderCards();
+
 refs.taskFormEl.addEventListener('submit', handlerTaskFormSubmit);
+
+refs.taskListEl.addEventListener('click', deleteCard);
+
+function deleteCard(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  event.target.closest('.task-list-item').remove();
+}

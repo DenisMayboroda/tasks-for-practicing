@@ -1,5 +1,6 @@
+import { nanoid } from 'nanoid';
 export function createDataForm(event) {
-  const data = {};
+  const data = { id: nanoid() };
   new FormData(event.currentTarget).forEach((value, key) => {
     data[key] = value;
   });
